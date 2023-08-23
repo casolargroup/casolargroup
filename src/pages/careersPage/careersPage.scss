@@ -1,0 +1,21 @@
+.careersPage{
+  padding-top: 110px;
+  padding-bottom: 30px;
+  .submit-button{
+    background-color: #ffc451;
+    border-color: #ffc451;
+    &:active{
+      background-color: #ffc451;
+      border-color: #ffc451;
+    }
+    &:hover{
+      color: #151515;
+    }
+  }
+  input, textarea{
+    &:focus{
+      border-color: #ffc451;
+      box-shadow: 0 0 0 0.25rem rgba(255, 196, 81, 0.25)
+    }
+  }
+}

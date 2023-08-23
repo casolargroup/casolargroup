@@ -1,0 +1,21 @@
+.portfolioPage{
+  padding-top: 110px;
+  padding-bottom: 60px;
+  .nav.nav-tabs{
+    border-color: #ffbb38;
+    .nav-link{
+      color: #151515;
+      &.active{
+        color: #ffbb38;
+        border-color: #ffbb38 #ffbb38 transparent;
+      }
+      &:hover{
+        border-color: #ffbb38;
+      }
+      &:focus-visible {
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem rgba(255,187,56,.25);
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.portfolioSlider{
+}
+.portfolioSlide{
+  height: calc(100vh/1.2);
+  img{
+    object-fit: contain;
+  }
+
+}
+.portfolioSlideModal{
+  .modal-header{
+    padding: 5px 15px;
+    h4{
+      margin-bottom: 0;
+      font-weight: bold;
+    }
+  }
+}

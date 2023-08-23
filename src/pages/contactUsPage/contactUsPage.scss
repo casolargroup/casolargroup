@@ -1,0 +1,75 @@
+.contact-us{
+  padding-top: 110px;
+  padding-bottom: 30px;
+  .contact-cart{
+    display: flex;
+    align-items: center;
+    transition: all 150ms ease-in-out;
+    i{
+      font-size: 20px;
+      background: #ffc451;
+      color: #151515;
+      float: left;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      transition: all 0.3s ease-in-out;
+    }
+    .text{
+      margin-left: 10px;
+      h4{
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #151515;
+      }
+      p{
+        margin-bottom: 0;
+        font-size: 14px;
+        color: #484848;
+      }
+    }
+    &:hover{
+      transform: scale(1.01);
+    }
+  }
+  input, textarea{
+    &:focus{
+      border-color: #ffc451;
+      box-shadow: 0 0 0 0.25rem rgba(255, 196, 81, 0.25)
+    }
+  }
+  .submit-button{
+    background-color: #ffc451;
+    border-color: #ffc451;
+    &:active{
+      background-color: #ffc451;
+      border-color: #ffc451;
+    }
+    &:hover{
+      color: #151515;
+    }
+  }
+  .thank-you-message{
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1{
+      color: #ffbb38;
+      font-size: 36px;
+      text-align: center;
+      font-weight: bold;
+    }
+    p{
+      color: #151515;
+      text-align: center;
+      font-size: 16px;
+    }
+  }
+}

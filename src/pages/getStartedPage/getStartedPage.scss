@@ -1,0 +1,28 @@
+.getStartedPage{
+  padding-top: 110px;
+  padding-bottom: 60px;
+  background: beige;
+  .thank-you-message{
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1{
+      color: #ffbb38;
+      font-size: 32px;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 30px
+    }
+    p{
+      color: #151515;
+      text-align: center;
+      font-size: 18px;
+      span{
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.financingPage{
+  padding-top: 110px;
+  padding-bottom: 60px;
+  .financingList{
+    li{
+      h4{
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+      p{
+        font-size: 14px;
+      }
+    }
+  }
+  .get-started-btn{
+    border-radius: 4px;
+    padding: 7px 10px 8px 10px;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 16px;
+    display: inline-block;
+    border: 2px solid #ffc451;
+    margin-left: 5px;
+    margin-right: 20px;
+    background: #ffbb38 !important;
+    color: #343a40;
+    @media (max-width: 1200px) {
+      font-size: 14px;
+    }
+  }
+
+}

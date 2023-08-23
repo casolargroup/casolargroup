@@ -1,0 +1,33 @@
+.faqPage{
+  padding-top: 110px;
+  padding-bottom: 50px;
+  .accordion{
+    .accordion-item{
+      &:focus-visible{
+        border-color: #ffbb38;
+      }
+      .accordion-header{
+        button{
+          color: #151515;
+          font-weight: bold;
+          &:after{
+            display: none;
+          }
+          &:focus{
+            border-color: #ffbb38;
+            box-shadow: 0 0 0 0.25rem rgba(255, 187, 56, 0.25);
+          }
+          &:not(.collapsed){
+            background-color: transparent;
+          }
+        }
+
+      }
+      .accordion-body{
+        &>p{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

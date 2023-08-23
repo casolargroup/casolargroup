@@ -1,0 +1,40 @@
+.partnerSwiper {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .slide-item-grid{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 100%;
+      .partnersLink{
+        display: flex;
+        cursor: pointer;
+        height: 100%;
+        width: auto;
+        align-items: center;
+        justify-content: center;
+        .qcell{
+          height: 100px;
+        }
+        .silfab{
+          height: 100px;
+        }
+        .lazy-load-image-background{
+          display: flex !important;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+
+  }
+}

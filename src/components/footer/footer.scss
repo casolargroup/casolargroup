@@ -1,0 +1,200 @@
+.footer{
+  background: black;
+  padding: 0 0 30px 0;
+  color: #fff;
+  font-size: 14px;
+  .footerTop{
+    background: #151515;
+    border-bottom: 1px solid #222222;
+    padding: 60px 0 30px 0;
+    .social-links-title{
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      margin-left: 16px;
+    }
+    .social-links{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      a{
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        line-height: 1;
+        padding: 4px 0;
+        text-align: center;
+        text-decoration: none;
+        &>div{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #292929;
+          width: 30px;
+          height: 30px;
+          border-radius: 4px;
+          margin-right: 4px;
+          transition: all 0.3s;
+        }
+        &>span{
+          font-size: 14px;
+          transition: all 0.3s;
+          line-height: normal;
+        }
+        &:hover{
+          color: #ffffff;
+        }
+        &.facebook{
+          &:hover{
+            &>div{
+              background: #0a53be;
+            }
+            span{
+              color: #0a53be;
+            }
+          }
+        }
+        &.twitter{
+          &:hover{
+            &>div{
+              background: #000000;
+            }
+            span{
+              color: #000000;
+            }
+          }
+        }
+        &.instagram{
+          &:hover{
+            &>div{
+              background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            }
+            span{
+              background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+          }
+        }
+        &.linkedin{
+          &:hover{
+            &>div{
+              background: #0a53be;
+            }
+            span{
+              color: #0a53be;
+            }
+          }
+        }
+        &.youtube{
+          &:hover{
+            &>div{
+              background: #ff0000;
+            }
+            span{
+              color: #ff0000;
+            }
+          }
+        }
+      }
+    }
+    .footer-info{
+      margin-bottom: 30px;
+      h3{
+        font-size: 23px;
+        margin: 0 0 10px 0;
+        padding: 2px 0 2px 0;
+        line-height: 1;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      p{
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 0;
+        font-family: "Raleway", sans-serif;
+        color: #fff;
+        &.contact-info{
+          display: flex;
+          a{
+            color: #ffc451;
+            display: block;
+            margin-left: 5px;
+            transition: all 150ms ease-in-out;
+            &:first-child{
+              margin: 0;
+            }
+            &:hover{
+              transform: scale(1.01);
+            }
+          }
+        }
+      }
+    }
+    .footer-links{
+      h4{
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        position: relative;
+        padding-bottom: 12px;
+        text-align: center;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        @media(max-width: 767px){
+          text-align: left;
+          margin-top: 20px;
+        }
+      }
+      ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li{
+          padding: 10px 0;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          justify-content: center;
+          @media(max-width: 767px){
+            justify-content: start;
+          }
+          a{
+            color: #fff;
+            transition: 0.3s;
+            display: inline-block;
+            line-height: 1;
+            text-align: center;
+          }
+          &:first-child{
+            padding-top: 0;
+          }
+          &:hover{
+            a{
+              color: #ffc451;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footerBottom{
+    .copyright{
+      text-align: center;
+      padding-top: 30px;
+    }
+    .credits{
+      padding-top: 10px;
+      text-align: center;
+      font-size: 13px;
+      color: #fff;
+      a{
+        color: #ffc451;
+        text-decoration: none;
+      }
+    }
+  }
+}

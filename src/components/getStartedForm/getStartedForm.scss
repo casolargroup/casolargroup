@@ -1,0 +1,96 @@
+.getStartedForm {
+  input, textarea{
+    &:focus{
+      border-color: #ffc451;
+      box-shadow: 0 0 0 0.25rem rgba(255, 196, 81, 0.25)
+    }
+  }
+  .form-control.stateInput{
+    &:disabled{
+      background: #ffffff;
+      color: gray;
+    }
+  }
+  .form-check-input{
+    &:checked{
+      background-color: #ffc451;
+      border-color: #ffc451;
+    }
+  }
+  .form-control.is-invalid{
+    border-color: var(--bs-form-invalid-border-color);
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("../../assets/icons/inValid.svg");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+    &:focus{
+      border-color: var(--bs-form-invalid-border-color);
+      padding-right: calc(1.5em + 0.75rem);
+      box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb),.25);
+    }
+  }
+  .form-control.is-valid{
+    border-color: var(--bs-form-valid-border-color);
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("../../assets/icons/valid.svg");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+    &:focus{
+      border-color: var(--bs-form-valid-border-color);
+      padding-right: calc(1.5em + 0.75rem);
+    }
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  .upload-btn{
+    margin-left: 20px;
+    background-color: #ffc451;
+    border-color: #ffc451;
+    &:active{
+      background-color: #ffc451;
+      border-color: #ffc451;
+    }
+  }
+  .submit-button{
+    background-color: #ffc451;
+    border-color: #ffc451;
+    &:active{
+      background-color: #ffc451;
+      border-color: #ffc451;
+    }
+    &:hover{
+      color: #151515;
+    }
+  }
+  .agree{
+    margin-top: 15px;
+    text-align: justify;
+    font-size: 11px;
+    a{
+      display: inline;
+      text-decoration: underline;
+    }
+  }
+  .multi-range-slider{
+    width: 100%;
+    position: relative;
+    margin-bottom: 28px !important;
+    padding: 10px 0;
+    &>.container{
+      height: 30px;
+    }
+  }
+  .form-select{
+    &:focus{
+      border-color: #ffc451;
+      box-shadow: 0 0 0 0.25rem rgba(255, 196, 81, 0.25)
+    }
+  }
+}
