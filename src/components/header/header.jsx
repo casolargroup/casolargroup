@@ -27,9 +27,18 @@ const Header = ({ setMyRef }) => {
 
   useEffect(() => {
     if (expanded) {
-      document.body.style.overflow = 'hidden';
+      document.querySelector('.myBody').style.overflow = 'hidden';
+      document.querySelector('.myBody').addEventListener('click', () => {
+        setExpanded(false)
+      })
+      document.querySelector('.myBody').addEventListener('touchstart', () => {
+        setExpanded(false)
+      })
+      document.querySelector('.myBody').addEventListener('scroll', () => {
+        setExpanded(false)
+      })
     } else {
-      document.body.style.overflow = 'auto';
+      document.querySelector('.myBody').style.overflow = 'auto';
     }
   }, [expanded]);
 
@@ -42,7 +51,6 @@ const Header = ({ setMyRef }) => {
 
     useLayoutEffect(() => {
       window.addEventListener('scroll', handleScroll);
-
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
@@ -60,6 +68,7 @@ const Header = ({ setMyRef }) => {
   };
   const scrollToTop = () => {
     navigate('/');
+    setExpanded(false)
     window.scrollTo({
       top: 0,
       behavior: 'smooth',

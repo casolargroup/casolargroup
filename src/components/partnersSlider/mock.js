@@ -56,9 +56,9 @@ export const sliderList = [
     id: 3,
     slide: [
       {
-        id: 5,
-        link: 'https://www.tesla.com/powerwall',
-        img: partner5,
+        id: 16,
+        link: 'https://calssa.org/',
+        img: partner16,
         class: '',
       },
       {
@@ -73,10 +73,10 @@ export const sliderList = [
     id: 4,
     slide: [
       {
-        id: 7,
-        link: 'https://unirac.com/product/solarmount/',
-        img: partner7,
-        class: '',
+        id: 14,
+        link: 'https://silfabsolar.com/',
+        img: partner14,
+        class: 'silfab',
       },
       {
         id: 8,
@@ -90,9 +90,9 @@ export const sliderList = [
     id: 5,
     slide: [
       {
-        id: 9,
-        link: 'https://www.gaf.com/en-us/roofing-contractors?utm_source=google&utm_medium=cpc&utm_campaign=Homeowner_Brand&utm_term=gaf%20master%20elite&gclid=Cj0KCQjwzdOlBhCNARIsAPMwjbxEEFpJtZMvzZRjnmMKtjuLFpFEJNlN5Joo1f-F-5Tb8e0xkRCdu0AaAoU5EALw_wcB&gclsrc=aw.ds',
-        img: partner9,
+        id: 5,
+        link: 'https://www.tesla.com/powerwall',
+        img: partner5,
         class: '',
       },
       {
@@ -130,10 +130,10 @@ export const sliderList = [
         class: 'qcell',
       },
       {
-        id: 14,
-        link: 'https://silfabsolar.com/',
-        img: partner14,
-        class: 'silfab',
+        id: 7,
+        link: 'https://unirac.com/product/solarmount/',
+        img: partner7,
+        class: '',
       },
     ],
   },
@@ -147,9 +147,9 @@ export const sliderList = [
         class: '',
       },
       {
-        id: 16,
-        link: 'https://calssa.org/',
-        img: partner16,
+        id: 9,
+        link: 'https://www.gaf.com/en-us/roofing-contractors?utm_source=google&utm_medium=cpc&utm_campaign=Homeowner_Brand&utm_term=gaf%20master%20elite&gclid=Cj0KCQjwzdOlBhCNARIsAPMwjbxEEFpJtZMvzZRjnmMKtjuLFpFEJNlN5Joo1f-F-5Tb8e0xkRCdu0AaAoU5EALw_wcB&gclsrc=aw.ds',
+        img: partner9,
         class: '',
       },
     ],

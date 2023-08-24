@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import ReactGA from 'react-ga4';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-ReactGA.initialize('G-Z267KV90QY');
+ReactGA.initialize('G-SZHBQBLLF7');
 root.render(
   <BrowserRouter>
     <App />

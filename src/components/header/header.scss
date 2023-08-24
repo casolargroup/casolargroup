@@ -6,9 +6,11 @@
   left: 0;
   width: 100%;
   z-index: 5;
+  transition: all .4s ease-in-out;
 }
 .sticky {
-  animation: slide 0.3s;
+  transition: all .4s ease-in-out;
+  animation: slide 0.4s;
   background: rgba(0,0,0,.8);
   label {
     font-weight: bold;

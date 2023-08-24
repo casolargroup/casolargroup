@@ -320,7 +320,7 @@ const HomePage = ({ myRef }) => {
                 <div className="col-lg-12">
                   <div className="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <NavLink to="/team" className="btn btn-warning btn-lg">
-                      More&nbsp;Info
+                      See&nbsp;More
                     </NavLink>
                   </div>
                 </div>

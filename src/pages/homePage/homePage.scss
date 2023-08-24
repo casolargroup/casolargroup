@@ -117,6 +117,9 @@
   }
   .section2{
     padding: 60px 0;
+    img{
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% !important;
+    }
     .content{
       h3 {
         font-weight: 700;
@@ -191,6 +194,7 @@
     padding-top: 20px;
     padding-bottom: 30px;
     .image{
+      border-radius: 12% 88% 76% 24% / 19% 50% 50% 81%  !important;
       background-image: url("../../assets/images/features.jpg");
       background-position: center center;
       background-repeat: no-repeat;

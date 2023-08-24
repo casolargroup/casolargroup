@@ -1,65 +1,65 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './careersPage.scss';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import team from '../../assets/images/team/0.jpg';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import { v4 as uuid } from 'uuid';
-import postData from '../../utils/api';
+// import Form from 'react-bootstrap/Form';
+// import Button from 'react-bootstrap/Button';
+// import { v4 as uuid } from 'uuid';
+// import postData from '../../utils/api';
 
 const CareersPage = () => {
-  const [validated, setValidated] = useState(false);
-  const [selectedFile, setSelectedFile] = useState({ fileName: '' });
-  const [fileId, setFileId] = useState('');
-  const [isDone, setIsDone] = useState(false);
-  let formBody = [];
+  // const [validated, setValidated] = useState(false);
+  // const [selectedFile, setSelectedFile] = useState({ fileName: '' });
+  // const [fileId, setFileId] = useState('');
+  // const [isDone, setIsDone] = useState(false);
+  // let formBody = [];
 
-  useEffect(() => {
-    setFileId(uuid());
-  }, []);
+  // useEffect(() => {
+  //   // setFileId(uuid());
+  // }, []);
+  //
+  // const handleSubmit = async event => {
+  //   event.preventDefault();
+  //   const form = event.currentTarget;
+  //   if (form.checkValidity() === false) {
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //   }
+  //   if (form.checkValidity() !== false) {
+  //     //upload file
+  //     const formData2 = new FormData();
+  //
+  //     if (!!selectedFile.name) {
+  //       const details = {
+  //         apiAction: 'addApplicant',
+  //         client_request_key: fileId,
+  //       };
+  //       for (let property in details) {
+  //         let encodedKey = encodeURIComponent(property);
+  //         let encodedValue = encodeURIComponent(details[property]);
+  //         formBody.push(encodedKey + '=' + encodedValue);
+  //       }
+  //       formBody = formBody.join('&');
+  //       formData2.append('client_request_key', fileId);
+  //       formData2.append('image_type', selectedFile?.type?.split('/')[1]);
+  //       formData2.append('image_file', selectedFile, selectedFile?.name);
+  //       if (selectedFile.size < 1048576) {
+  //         await fetch('https://homerenovationnation.com/api/fileupload.jsp', {
+  //           method: 'POST',
+  //           body: formData2,
+  //           mode: 'no-cors',
+  //         });
+  //         await postData('https://casolargroup.com/hrn.jsp', formBody);
+  //         setIsDone(true);
+  //       }
+  //     }
+  //   }
+  //   setValidated(true);
+  // };
 
-  const handleSubmit = async event => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    if (form.checkValidity() !== false) {
-      //upload file
-      const formData2 = new FormData();
-
-      if (!!selectedFile.name) {
-        const details = {
-          apiAction: 'addApplicant',
-          client_request_key: fileId,
-        };
-        for (let property in details) {
-          let encodedKey = encodeURIComponent(property);
-          let encodedValue = encodeURIComponent(details[property]);
-          formBody.push(encodedKey + '=' + encodedValue);
-        }
-        formBody = formBody.join('&');
-        formData2.append('client_request_key', fileId);
-        formData2.append('image_type', selectedFile?.type?.split('/')[1]);
-        formData2.append('image_file', selectedFile, selectedFile?.name);
-        if (selectedFile.size < 1048576) {
-          await fetch('https://homerenovationnation.com/api/fileupload.jsp', {
-            method: 'POST',
-            body: formData2,
-            mode: 'no-cors',
-          });
-          await postData('https://casolargroup.com/hrn.jsp', formBody);
-          setIsDone(true);
-        }
-      }
-    }
-    setValidated(true);
-  };
-
-  const handleUpload = event => {
-    setSelectedFile(event.target.files[0]);
-  };
+  // const handleUpload = event => {
+  //   setSelectedFile(event.target.files[0]);
+  // };
 
   return (
     <div className="careersPage">
@@ -80,28 +80,28 @@ const CareersPage = () => {
               potential employer. We wish you success in your job search and professional endeavors.
             </p>
             <p> Best regards, California Solar Group.</p>
-            {!isDone ? (
-              <div>
-                {/*<Form noValidate validated={validated} onSubmit={handleSubmit}>*/}
-                {/*  <Form.Group controlId="formFile" className="mb-3">*/}
-                {/*    <Form.Label>Upload your resume (Max. 1Mb)(.psd)</Form.Label>*/}
-                {/*    <Form.Control*/}
-                {/*      type="file"*/}
-                {/*      value={selectedFile.filename}*/}
-                {/*      onChange={event => handleUpload(event)}*/}
-                {/*    />*/}
-                {/*  </Form.Group>*/}
-                {/*  <Button type="submit" className="d-flex mx-auto submit-button mt-4 mb-4">*/}
-                {/*    Send Resume*/}
-                {/*  </Button>*/}
-                {/*</Form>*/}
-              </div>
-            ) : (
-              <div>
-                We have successfully received your resume. <br /> Thank you for expressing interest
-                in joining our team.
-              </div>
-            )}
+            {/*{!isDone ? (*/}
+            {/*  <div>*/}
+            {/*    /!*<Form noValidate validated={validated} onSubmit={handleSubmit}>*!/*/}
+            {/*    /!*  <Form.Group controlId="formFile" className="mb-3">*!/*/}
+            {/*    /!*    <Form.Label>Upload your resume (Max. 1Mb)(.psd)</Form.Label>*!/*/}
+            {/*    /!*    <Form.Control*!/*/}
+            {/*    /!*      type="file"*!/*/}
+            {/*    /!*      value={selectedFile.filename}*!/*/}
+            {/*    /!*      onChange={event => handleUpload(event)}*!/*/}
+            {/*    /!*    />*!/*/}
+            {/*    /!*  </Form.Group>*!/*/}
+            {/*    /!*  <Button type="submit" className="d-flex mx-auto submit-button mt-4 mb-4">*!/*/}
+            {/*    /!*    Send Resume*!/*/}
+            {/*    /!*  </Button>*!/*/}
+            {/*    /!*</Form>*!/*/}
+            {/*  </div>*/}
+            {/*) : (*/}
+            {/*  <div>*/}
+            {/*    We have successfully received your resume. <br /> Thank you for expressing interest*/}
+            {/*    in joining our team.*/}
+            {/*  </div>*/}
+            {/*)}*/}
           </div>
           <div className="col-md-6">
             <LazyLoadImage
