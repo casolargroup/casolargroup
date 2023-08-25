@@ -86,7 +86,7 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
             body: formData,
             mode: 'no-cors',
           });
-          postData('https://casolargroup.com/hrn.jsp', formBody).then(data => {
+          postData('https://www.casolargroup.io/hrn.jsp', formBody).then(data => {
             setValid(true);
           });
         } else {
@@ -94,7 +94,7 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
           setIsFileOk(false);
         }
       } else {
-        postData('https://casolargroup.com/hrn.jsp', formBody).then(data => {
+        postData('https://www.casolargroup.io/hrn.jsp', formBody).then(data => {
           setValid(true);
         });
       }

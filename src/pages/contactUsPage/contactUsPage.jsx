@@ -37,7 +37,7 @@ const ContactUsPage = () => {
         formBody.push(encodedKey + '=' + encodedValue);
       }
       formBody = formBody.join('&');
-      postData('https://casolargroup.com/hrn.jsp', formBody).then(data => {
+      postData('https://www.casolargroup.io/hrn.jsp', formBody).then(data => {
         setValid(true);
       });
     }
