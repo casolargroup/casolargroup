@@ -58,12 +58,21 @@
           }
         }
         &.twitter{
+          &>div{
+            svg{
+              width: 12px !important;
+              height: 12px !important;
+              path{
+                fill: #ffffff;
+              }
+            }
+          }
           &:hover{
             &>div{
               background: #000000;
             }
             span{
-              color: #000000;
+              color: #ffffff;
             }
           }
         }

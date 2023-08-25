@@ -42,13 +42,17 @@ const Footer = () => {
                 </a>
                 <a href="https://twitter.com/CA_SolarGroup" className="twitter">
                   <div>
-                    <i className="bx bxl-twitter" />
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" className="r-13v1u17 r-4qtqp9 r-yyyyoo r-16y2uox r-8kz0gk r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-lrsllp">
+                          <g>
+                              <path d="M14.258 10.152L23.176 0h-2.113l-7.747 8.813L7.133 0H0l9.352 13.328L0 23.973h2.113l8.176-9.309 6.531 9.309h7.133zm-2.895 3.293l-.949-1.328L2.875 1.56h3.246l6.086 8.523.945 1.328 7.91 11.078h-3.246zm0 0"/>
+                          </g>
+                      </svg>
                   </div>
                   <span>Twitter</span>
                 </a>
                 <a
-                  href="https://www.instagram.com/californiasolargroup/?igshid=MzRlODBiNWFlZA%3D%3D"
-                  className="instagram"
+                    href="https://www.instagram.com/californiasolargroup/?igshid=MzRlODBiNWFlZA%3D%3D"
+                    className="instagram"
                 >
                   <div>
                     <i className="bx bxl-instagram" />
@@ -89,7 +93,7 @@ const Footer = () => {
                   <NavLink to={'/careers'}>Careers</NavLink>
                 </li>
                 <li>
-                  <NavLink to={'/'}>Privacy Policy</NavLink>
+                  <NavLink to={'/privacy-policy'}>Privacy Policy</NavLink>
                 </li>
               </ul>
             </div>

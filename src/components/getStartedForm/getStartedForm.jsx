@@ -328,7 +328,7 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
                   aria-label="Default select example 3"
                   className="mb-3"
                 >
-                  <option>Choose</option>
+                  <option style={{display: 'none'}}>Choose</option>
                   <option value="facebook">Facebook</option>
                   <option value="instagram">Instagram</option>
                   <option value="brochure">Brochure</option>
@@ -427,8 +427,8 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
                 <p>What is your current monthly electric bill (approximately)</p>
                 <div className="multi-range-slider mb-3">
                   <MultiRangeSlider
-                    min={50}
-                    max={400}
+                    min={0}
+                    max={2000}
                     onChange={({ min, max }) => {
                       setMinVal(min);
                       setMaxVal(max);
@@ -445,8 +445,9 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
                     required
                     onChange={event => setRoofType(event.target.value)}
                   >
-                    <option>Roof type</option>
+                    <option style={{display: 'none'}}>Roof Type</option>
                     <option value="single">Shingle</option>
+                    <option value="clay">Clay</option>
                     <option value="tile">Tile</option>
                     <option value="metal">Metal</option>
                     <option value="flat">Flat</option>
@@ -461,10 +462,10 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
                     aria-label="Default select example 2"
                     className="mb-3"
                   >
-                    <option>Roof age</option>
-                    <option value="Under 10 years">Under 10 years</option>
-                    <option value="20-30 years">10-20 years</option>
-                    <option value="More than 20 years">More than 20 years</option>
+                    <option style={{display: 'none'}}>Roof age</option>
+                    <option value="Under 10 years">&nbsp;0 - 10 years</option>
+                    <option value="20-30 years">10 - 20 years</option>
+                    <option value="More than 20 years">20 + years</option>
                     <option value="not-sure">Not Sure</option>
                   </Form.Select>
                 </div>
