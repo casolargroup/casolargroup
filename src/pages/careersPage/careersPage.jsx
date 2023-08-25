@@ -66,18 +66,16 @@ const CareersPage = () => {
       <div className="container">
         <div className="row flex-wrap-reverse">
           <div className="col-md-6">
-            <h5>Dear Visitor,</h5>
+            <h5 className="mb-3 fw-bold">Dear Visitor,</h5>
             <p>
-              We appreciate your interest in joining our team at California Solar Group. Currently,
+              Thank you  for considering California Solar Group as a
+              potential employer. Currently,
               there are no vacancy announcements available on our Careers page. We are grateful for
               your consideration and encourage you to keep an eye on our website for future
-              opportunities. We understand that your skills and expertise may align with our future
-              needs, and we encourage you to periodically check our website for updates. As we
-              continue to grow, new positions may become available that match your background. We
-              value the enthusiasm of applicants like you and hope to have the opportunity to
-              connect in the future. Thus you have the opportunity to upload your resume so that we
-              can reach you out. Thank you again for considering California Solar Group as a
-              potential employer. We wish you success in your job search and professional endeavors.
+              opportunities. As we continue to grow, new positions may become available that match your background.
+            </p>
+            <p>
+              We wish you success in your job search and professional endeavors.
             </p>
             <p> Best regards, California Solar Group.</p>
             {/*{!isDone ? (*/}
