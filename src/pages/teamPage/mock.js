@@ -4,14 +4,20 @@ import team3 from '../../assets/images/team/3. Danny Thomson.jpg';
 import team4 from '../../assets/images/team/4. Logan Weinberg.jpg';
 import team5 from '../../assets/images/team/5. Inga Saroyan.jpg';
 import team6 from '../../assets/images/team/6. Margarita Ohanyan.jpg';
-import team7 from '../../assets/images/team/7. Patrick Hengeller.jpg';
-import team8 from '../../assets/images/team/8. Jansen O Ypung.jpg';
-import team9 from '../../assets/images/team/9. Daniel Joshua Dyer.jpg';
-import team10 from '../../assets/images/team/10. Artyom Vardanyan.jpg';
-import team11 from '../../assets/images/team/11. Aharon Urusyan.jpg';
-import team12 from '../../assets/images/team/12. Hrach Karapetyan.jpg';
-import team13 from '../../assets/images/team/13. Avetik Aharonyan.jpg';
-import team14 from '../../assets/images/team/14. Albert Poghosyan.jpg';
+import team7 from '../../assets/images/team/7. Hayk Hovhannesyan.jpg';
+import team8 from '../../assets/images/team/8. Lilit Manvelyan.jpg';
+import team9 from '../../assets/images/team/9. Jansen O Yung.jpg';
+import team10 from '../../assets/images/team/10. Stephanie Zolozabel.jpg';
+import team11 from '../../assets/images/team/11. Mkrtum Abrahamyan.jpg';
+import team12 from '../../assets/images/team/12. Ryan McKovich.jpg';
+import team13 from '../../assets/images/team/13. Patrick Hengeller.jpg';
+import team14 from '../../assets/images/team/14. Conor Evans.jpg';
+import team15 from '../../assets/images/team/15. Daniel Joshua Dyer.jpg';
+import team16 from '../../assets/images/team/16. Avetik Aharonyan.jpg';
+import team17 from '../../assets/images/team/17. Albert Poghosyan.jpg';
+import team18 from '../../assets/images/team/18. Artyom Vardanyan.jpg';
+import team19 from '../../assets/images/team/19. Aharon Urusyan.jpg';
+import team20 from '../../assets/images/team/20. Hrach Karapetyan.jpg';
 
 export const ourTeam = [
   {
@@ -52,50 +58,86 @@ export const ourTeam = [
   },
   {
     id: 7,
-    name: 'Patrick Hengeller',
-    profession: 'Sales Representative',
+    name: 'Hayk Hovhannesyan',
+    profession: 'Marketing Manager',
     imgUrl: team7,
   },
   {
     id: 8,
-    name: 'Jansen O Ypung',
-    profession: 'Marketing Coordinator',
+    name: 'Lilit Manvelyan',
+    profession: 'Project Manager',
     imgUrl: team8,
   },
   {
     id: 9,
-    name: 'Daniel Joshua Dyer',
-    profession: 'Inspections Coordinator',
+    name: 'Jansen O Young',
+    profession: 'Marketing Coordinator',
     imgUrl: team9,
   },
   {
     id: 10,
-    name: 'Artyom Vardanyan',
-    profession: 'Installation Technician',
+    name: 'Stephanie Zolozabal',
+    profession: 'SMM Specialist',
     imgUrl: team10,
   },
   {
     id: 11,
-    name: 'Aharon Urusyan',
-    profession: 'Installation Technician',
+    name: 'Mkrtum Abrahamyan',
+    profession: 'Web Developer',
     imgUrl: team11,
   },
   {
     id: 12,
-    name: 'Hrach Karapetyan',
-    profession: 'Installation Technician',
+    name: 'Ryan McKovich',
+    profession: 'Sales Representative',
     imgUrl: team12,
   },
   {
     id: 13,
-    name: 'Avetik Aharonyan',
-    profession: 'Lead Foreman',
+    name: 'Patrick Hengeller',
+    profession: 'Sales Representative',
     imgUrl: team13,
   },
   {
     id: 14,
+    name: 'Conor Evans',
+    profession: 'Sales Representative',
+    imgUrl: team14,
+  },
+  {
+    id: 15,
+    name: 'Daniel Joshua Dyer',
+    profession: 'Inspection Coordinator',
+    imgUrl: team15,
+  },
+  {
+    id: 16,
+    name: 'Avetik Aharonyan',
+    profession: 'Lead Foreman',
+    imgUrl: team16,
+  },
+  {
+    id: 17,
     name: 'Albert Poghosyan',
     profession: 'Lead Electrician',
-    imgUrl: team14,
+    imgUrl: team17,
+  },
+  {
+    id: 18,
+    name: ' Artyom Vardanyan',
+    profession: 'Installation Technician',
+    imgUrl: team18,
+  },
+  {
+    id: 19,
+    name: 'Aharon Urusyan',
+    profession: 'Installation Technician',
+    imgUrl: team19,
+  },
+  {
+    id: 20,
+    name: 'Hrach Karapetyan',
+    profession: 'Installation Technician',
+    imgUrl: team20,
   },
 ];
