@@ -31,6 +31,7 @@ import PrivacyPolicyPage from './pages/privacyPolicyPage';
 import FbChat from './utils/fbChat';
 import ReactGA from 'react-ga';
 import { useLocation } from 'react-router-dom';
+import ErrorPage from './pages/errorPage';
 
 function App() {
   const TRACKING_ID = 'G-SZHBQBLLF7';
@@ -43,7 +44,9 @@ function App() {
   }, [location.pathname, location.search]);
 
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      once: true,
+    });
     AOS.refresh();
   }, []);
 
@@ -53,8 +56,9 @@ function App() {
       <MetPixel />
       <FbChat />
       <Header setMyRef={setMyRef} />
-      <div className='myBody'>
+      <div className="myBody">
         <Routes>
+          <Route path={'*'} element={<ErrorPage />} />
           <Route path={'/'} element={<HomePage myRef={myRef} />} />
           <Route path={'/team'} element={<TeamPage />} />
           <Route path={'/contact-us'} element={<ContactUsPage />} />

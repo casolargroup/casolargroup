@@ -102,12 +102,11 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-
             <div className="col-lg-3 col-md-6 mt-4 mt-md-0">
               <LazyLoadImage
                 src={logo}
                 alt="img"
-                className="img-fluid"
+                className="img-fluid footer-logo"
                 width={'100%'}
                 height={'auto'}
               />
