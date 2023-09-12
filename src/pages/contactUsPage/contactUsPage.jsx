@@ -93,7 +93,7 @@ const ContactUsPage = () => {
               className="mb-4"
             />
             <a
-              href="https://www.google.com/maps/search/7647+Hayvenhurst+Ave,+Unit+26,+Van+Nuys,+CA+91406"
+              href="https://www.google.com/maps/place/208+S+Grand+Ave,+Santa+Ana,+CA+92701/@33.7439351,-117.8541627,17z/data=!3m1!4b1!4m6!3m5!1s0x80dcd9727d0dde9b:0xbb5f5f842b50c11c!8m2!3d33.7439307!4d-117.8515878!16s%2Fg%2F11j0tb1g7s?entry=ttu"
               target="_blank"
               rel="noreferrer"
               className="contact-cart mb-3"

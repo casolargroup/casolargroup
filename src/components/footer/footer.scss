@@ -6,12 +6,16 @@
   .footer-logo{
     width: 60%;
     display: flex;
-    margin-left: auto;
+    margin: 0 auto 30px;
+    @media (max-width: 786px) {
+      max-width: 240px;
+      width: 100%;
+    }
   }
   .footerTop{
     background: #151515;
     border-bottom: 1px solid #222222;
-    padding: 60px 0 30px 0;
+    padding: 30px 0 30px 0;
     .social-links-title{
       font-size: 16px;
       font-weight: bold;
@@ -22,8 +26,12 @@
     }
     .social-links{
       display: flex;
-      flex-direction: column;
       text-align: center;
+      align-items: center;
+      justify-content: center;
+      @media (max-width: 786px) {
+        margin-bottom: 30px;
+      }
       a{
         font-size: 18px;
         display: flex;
@@ -44,11 +52,6 @@
           margin-right: 4px;
           transition: all 0.3s;
         }
-        &>span{
-          font-size: 14px;
-          transition: all 0.3s;
-          line-height: normal;
-        }
         &:hover{
           color: #ffffff;
         }
@@ -56,9 +59,6 @@
           &:hover{
             &>div{
               background: #0a53be;
-            }
-            span{
-              color: #0a53be;
             }
           }
         }
@@ -76,20 +76,12 @@
             &>div{
               background: #000000;
             }
-            span{
-              color: #ffffff;
-            }
           }
         }
         &.instagram{
           &:hover{
             &>div{
               background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-            }
-            span{
-              background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
             }
           }
         }
@@ -98,9 +90,6 @@
             &>div{
               background: #0a53be;
             }
-            span{
-              color: #0a53be;
-            }
           }
         }
         &.youtube{
@@ -108,22 +97,15 @@
             &>div{
               background: #ff0000;
             }
-            span{
-              color: #ff0000;
-            }
           }
         }
       }
     }
     .footer-info{
-      margin-bottom: 30px;
-      h3{
-        font-size: 23px;
-        margin: 0 0 10px 0;
-        padding: 2px 0 2px 0;
-        line-height: 1;
-        font-weight: 700;
-        text-transform: uppercase;
+      @media(max-width: 786px){
+        max-width: 240px;
+        width: 100%;
+        margin: 0 auto 20px;
       }
       p{
         font-size: 14px;
@@ -135,11 +117,17 @@
           display: flex;
           a{
             color: #ffc451;
-            display: block;
-            margin-left: 5px;
+            display: flex;
+            align-items: flex-start;
             transition: all 150ms ease-in-out;
-            &:first-child{
-              margin: 0;
+            margin-bottom: 10px;
+            img{
+              height: auto !important;
+            }
+            span{
+              display: block;
+              line-height: normal;
+              margin-left: 7px;
             }
             &:hover{
               transform: scale(1.01);
@@ -149,26 +137,17 @@
       }
     }
     .footer-links{
-      h4{
-        font-size: 16px;
-        font-weight: 600;
-        color: #fff;
-        position: relative;
-        padding-bottom: 12px;
-        text-align: center;
-        text-decoration: underline;
-        text-underline-offset: 2px;
-        @media(max-width: 767px){
-          text-align: left;
-          margin-top: 20px;
-        }
-      }
+      padding-top: 30px;
       ul{
         list-style: none;
         padding: 0;
         margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
         li{
-          padding: 10px 0;
+          padding: 10px 5px;
           display: flex;
           align-items: center;
           text-align: center;
@@ -182,9 +161,6 @@
             display: inline-block;
             line-height: 1;
             text-align: center;
-          }
-          &:first-child{
-            padding-top: 0;
           }
           &:hover{
             a{

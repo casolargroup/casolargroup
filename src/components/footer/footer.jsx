@@ -3,42 +3,57 @@ import './footer.scss';
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import location from '../../assets/icons/location.png';
+import mail from '../../assets/icons/mail.png';
+import phone from '../../assets/icons/phone.png';
 
 const Footer = () => {
   return (
     <div className="footer">
       <div className="footerTop">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-4 col-md-6">
+          <div className="row justify-content-between align-items-end">
+            <div className="col-md-3">
               <div className="footer-info">
-                <h3>California Solar Group</h3>
                 <p className="contact-info">
                   <a
                     href="https://www.google.com/maps/search/7647+Hayvenhurst+Ave,+Unit+26,+Van+Nuys,+CA+91406"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    7647 Hayvenhurst Ave, Unit 26, <br /> Van Nuys, CA 91406
+                    <LazyLoadImage src={location} alt="img" width={'20px'} height={'auto'} />
+                    <span>
+                      7647 Hayvenhurst Ave, Unit 26, <br /> Van Nuys, CA 91406
+                    </span>
                   </a>
                 </p>
                 <p className="contact-info">
-                  <strong>Phone: </strong> <a href="tel:7472862828"> (747) 286-2828</a>
+                  <a href="tel:7472862828">
+                    <LazyLoadImage src={phone} alt="img" width={'20px'} height={'auto'} />
+                    <span>+1-(747)-286-2828</span>
+                  </a>
                 </p>
                 <p className="contact-info">
-                  <strong>Email:</strong>
-                  <a href="mailto:info@casolargroup.com"> info@casolgroup.com</a>
+                  <a href="mailto:info@casolargroup.com">
+                    <LazyLoadImage src={mail} alt="img" width={'20px'} height={'auto'} />
+                    <span>info@casolgroup.com</span>
+                  </a>
                 </p>
               </div>
             </div>
-            <div className="col-lg-2 col-md-6">
-              <h4 className="social-links-title">Follow Us</h4>
+            <div className="col-md-3">
+              <LazyLoadImage
+                src={logo}
+                alt="img"
+                className="img-fluid footer-logo"
+                width={'100%'}
+                height={'auto'}
+              />
               <div className="social-links">
                 <a href="https://www.facebook.com/casolargroup" className="facebook">
                   <div>
                     <i className="bx bxl-facebook" />
                   </div>
-                  <span>Facebook</span>
                 </a>
                 <a href="https://twitter.com/CA_SolarGroup" className="twitter">
                   <div>
@@ -53,7 +68,6 @@ const Footer = () => {
                       </g>
                     </svg>
                   </div>
-                  <span>Twitter</span>
                 </a>
                 <a
                   href="https://www.instagram.com/californiasolargroup/?igshid=MzRlODBiNWFlZA%3D%3D"
@@ -62,55 +76,75 @@ const Footer = () => {
                   <div>
                     <i className="bx bxl-instagram" />
                   </div>
-                  <span>Instagram</span>
                 </a>
                 <a href="https://www.linkedin.com/company/ca-solar-group/" className="linkedin">
                   <div>
                     <i className="bx bxl-linkedin" />
                   </div>
-                  <span>Linkedin</span>
                 </a>
                 <a href="https://www.youtube.com/@CaliforniaSolarGroup" className="youtube">
                   <div>
                     <i className="bx bxl-youtube" />
                   </div>
-                  <span>YouTube</span>
                 </a>
               </div>
             </div>
-
-            <div className="col-lg-3 col-md-6 footer-links">
-              <h4>Useful Information</h4>
-              <ul>
-                <li>
-                  <NavLink to={'/faq'}>FAQ</NavLink>
-                </li>
-                <li>
-                  <NavLink to={'/blog'}>Blog</NavLink>
-                </li>
-                <li>
-                  <NavLink to={'/accessibility'}>Accessibility Statement</NavLink>
-                </li>
-                <li>
-                  <NavLink to={'/become-partner'}>Become a Partner</NavLink>
-                </li>
-                <li>
-                  <NavLink to={'/careers'}>Careers</NavLink>
-                </li>
-                <li>
-                  <NavLink to={'/privacy-policy'}>Privacy Policy</NavLink>
-                </li>
-              </ul>
+            <div className="col-md-3">
+              <div className="footer-info">
+                <p className="contact-info">
+                  <a
+                    href="https://www.google.com/maps/place/208+S+Grand+Ave,+Santa+Ana,+CA+92701/@33.7439351,-117.8541627,17z/data=!3m1!4b1!4m6!3m5!1s0x80dcd9727d0dde9b:0xbb5f5f842b50c11c!8m2!3d33.7439307!4d-117.8515878!16s%2Fg%2F11j0tb1g7s?entry=ttu"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <LazyLoadImage src={location} alt="img" width={'20px'} height={'auto'} />
+                    <span>
+                      208 S Grand Ave,
+                      <br /> Santa Ana, CA 92701
+                    </span>
+                  </a>
+                </p>
+                <p className="contact-info">
+                  <a href="tel:7472862828">
+                    <LazyLoadImage src={phone} alt="img" width={'20px'} height={'auto'} />
+                    <span>+1-(818)-658-2362</span>
+                  </a>
+                </p>
+                <p className="contact-info">
+                  <a href="mailto:info@casolargroup.com">
+                    <LazyLoadImage src={mail} alt="img" width={'20px'} height={'auto'} />
+                    <span>info@casolgroup.com</span>
+                  </a>
+                </p>
+              </div>
             </div>
-            <div className="col-lg-3 col-md-6 mt-4 mt-md-0">
-              <LazyLoadImage
-                src={logo}
-                alt="img"
-                className="img-fluid footer-logo"
-                width={'100%'}
-                height={'auto'}
-              />
-            </div>
+          </div>
+          <div className="footer-links">
+            <ul>
+              <li>
+                <NavLink to={'/faq'}>FAQ</NavLink>
+              </li>
+              |
+              <li>
+                <NavLink to={'/blog'}>Blog</NavLink>
+              </li>
+              |
+              <li>
+                <NavLink to={'/accessibility'}>Accessibility Statement</NavLink>
+              </li>
+              |
+              <li>
+                <NavLink to={'/become-partner'}>Become a Partner</NavLink>
+              </li>
+              |
+              <li>
+                <NavLink to={'/careers'}>Careers</NavLink>
+              </li>
+              |
+              <li>
+                <NavLink to={'/privacy-policy'}>Privacy Policy</NavLink>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
