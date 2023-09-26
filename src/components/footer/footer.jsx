@@ -17,13 +17,13 @@ const Footer = () => {
               <div className="footer-info">
                 <p className="contact-info">
                   <a
-                    href="https://www.google.com/maps/search/7647+Hayvenhurst+Ave,+Unit+26,+Van+Nuys,+CA+91406"
+                    href="https://maps.app.goo.gl/6uXjAaEq9g42wW9s6"
                     target="_blank"
                     rel="noreferrer"
                   >
                     <LazyLoadImage src={location} alt="img" width={'20px'} height={'auto'} />
                     <span>
-                      7647 Hayvenhurst Ave, Unit 26, <br /> Van Nuys, CA 91406
+                      1620 South Central Avenue, <br /> Glendale, CA
                     </span>
                   </a>
                 </p>
