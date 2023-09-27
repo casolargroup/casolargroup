@@ -23,7 +23,7 @@ const Footer = () => {
                   >
                     <LazyLoadImage src={location} alt="img" width={'20px'} height={'auto'} />
                     <span>
-                      1620 South Central Avenue, <br /> Glendale, CA
+                      1620 S Central Avenue, <br /> Glendale, CA
                     </span>
                   </a>
                 </p>

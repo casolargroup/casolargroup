@@ -69,7 +69,7 @@ const ContactUsPage = () => {
               <i className="bi bi-geo-alt" />
               <div className="text">
                 <h4>Los Angeles Headquarters</h4>
-                <p>1620 South Central Avenue, Glendale, CA 91204</p>
+                <p>1620 S Central Avenue, Glendale, CA 91204</p>
               </div>
             </a>
             <a href="tel:7472862828" className="contact-cart mb-3">
