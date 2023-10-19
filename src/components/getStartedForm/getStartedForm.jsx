@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './getStartedForm.scss';
 import Form from 'react-bootstrap/Form';
 import NavLink from 'react-bootstrap/NavLink';
 import Button from 'react-bootstrap/Button';
 import { E_MAIL, LETTERS, PHONENUMBER, ZIPCODE } from '../../validation/regex';
 import MultiRangeSlider from '../multiRangeSlider';
-import postData from '../../utils/api';
-import { v4 as uuid } from 'uuid';
 
 const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate }) => {
   const [validated, setValidated] = useState(false);
@@ -16,6 +14,7 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
   const [validReferredEmail, setValidReferredEmail] = useState(true);
   const [validZip, setValidZip] = useState(true);
   const [validCity, setValidCity] = useState(true);
+  const [validAddress, setValidAddress] = useState(true);
 
   const [name, setName] = useState('');
   const [surName, setSurName] = useState('');
@@ -29,75 +28,62 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
   const [referredName, setReferredName] = useState('');
   const [referredEmail, setReferredEmail] = useState('');
   const [referredPhone, setReferredPhone] = useState('');
+  const [address, setAddress] = useState('');
+  const [leadType, setLeadType] = useState('');
 
   const [roofType, setRoofType] = useState('');
   const [roofAge, setRoofAge] = useState('');
 
   const [minVal, setMinVal] = useState('');
   const [maxVal, setMaxVal] = useState('');
-  const [fileId, setFileId] = useState('');
 
   const [isFileOk, setIsFileOk] = useState(true);
   const [selectedFile, setSelectedFile] = useState({ fileName: '' });
 
-  let formBody = [];
-
-  useEffect(() => {
-    setFileId(uuid());
-  }, []);
+  const formId = 'yWHYM1qnYU2Etd/3t+moZw==';
 
   const handleSubmit = async event => {
     event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() !== false) {
-      const details = {
-        apiAction: 'addQuote',
-        customer_name: `${name} ${surName}`,
-        email: email,
-        phone_number: phoneNumber,
-        installation_address: `${state} ${city} ${zip}`,
-        roof_type: `${!!roofType ? roofType : ''}, ${!!roofAge ? `Age:${roofAge}` : 'Age:'}`,
-        energy_usage: 0,
-        additional_message: `IsOwner: ${!!isOwner ? isOwner : ''}, Call or Email: ${
-          !!callOrEmail ? callOrEmail : ''
-        } Monthly payment: $${!!minVal ? minVal : ''} - ${
-          !!maxVal ? maxVal : ''
-        } client_request_key=${fileId}, referredBy=${referredBy}, referredName=${referredName}, referredEmail=${referredEmail}, referredPhone=${referredPhone}`,
-      };
-      for (let property in details) {
-        let encodedKey = encodeURIComponent(property);
-        let encodedValue = encodeURIComponent(details[property]);
-        formBody.push(encodedKey + '=' + encodedValue);
+      setIsFileOk(true);
+      let referredInformation = '';
+      if (referredBy === 'Friend') {
+        referredInformation = `Referred By: ${referredName}, ${referredEmail}, ${referredPhone}`;
+      } else {
+        referredInformation = `Referred By: ${referredBy}`;
       }
-      formBody = formBody.join('&');
-
-      //upload file
+      const roofInformation = `Roof Type: ${roofType}, Roof Age: ${roofAge}`;
+      const additionalInformation = `Connection Type: ${callOrEmail}`;
+      const utility = `Monthly Bill: Min: ${minVal}, Max: ${maxVal}`;
+      const notes = `${additionalInformation}, ${referredInformation}`;
       const formData = new FormData();
 
-      if (!!selectedFile.length) {
-        formData.append('client_request_key', fileId);
-        formData.append('image_type', selectedFile?.type?.split('/')[1]);
-        formData.append('image_file', selectedFile, selectedFile?.name);
-        if (selectedFile.size < 1048576) {
-          setIsFileOk(true);
-          setValid(true);
-          await fetch('https://homerenovationnation.com/api/fileupload.jsp', {
-            method: 'POST',
-            body: formData,
-            mode: 'no-cors',
-          });
-          postData('https://www.casolargroup.io/hrn.jsp', formBody).then(data => {
-            setValid(true);
-          });
-        } else {
-          setValid(false);
-          setIsFileOk(false);
-        }
-      } else {
-        postData('https://www.casolargroup.io/hrn.jsp', formBody).then(data => {
-          setValid(true);
-        });
-      }
+      formData.append('formId', formId);
+      formData.append('FirstName', name);
+      formData.append('LastName', surName);
+      formData.append('phone', phoneNumber);
+      formData.append('email', email);
+      formData.append('AddressState', state);
+      formData.append('Address_1__c', `${address} ${zip}`);
+      formData.append('City__c', city);
+      formData.append('Description_1__c', notes);
+      formData.append('Roof_Information_1__c', roofInformation);
+      formData.append('Accounting_Notes_1_1__c', utility);
+      formData.append('Type_of_Lead__c', leadType);
+      await fetch('https://crm.na1.insightly.com/WebToLead/Create', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors',
+      });
+      await fetch(
+        `https://webhooks.workato.com/webhooks/rest/2ca87116-e2c1-4bbd-a5ce-fde7d0cbb162/file?email=${email}&file_name=${selectedFile.name}`,
+        {
+          method: 'POST',
+          body: selectedFile,
+          mode: 'no-cors',
+        },
+      ).then(res => setValid(true));
     }
     setValidated(true);
   };
@@ -153,6 +139,15 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
       setValidCity(true);
     } else {
       setValidCity(false);
+    }
+  };
+
+  const handleAddress = event => {
+    setAddress(event.target.value);
+    if (LETTERS.test(event.target.value)) {
+      setValidAddress(true);
+    } else {
+      setValidAddress(false);
     }
   };
 
@@ -234,7 +229,7 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
               </div>
             </div>
             <div className="row">
-              <div className="col-md-4">
+              <div className="col-md-6">
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput5">
                   <Form.Label>* State</Form.Label>
                   <Form.Control
@@ -252,7 +247,7 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
                   </Form.Control.Feedback>
                 </Form.Group>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-6">
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput6">
                   <Form.Label>* City</Form.Label>
                   <Form.Control
@@ -268,7 +263,25 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
                   </Form.Control.Feedback>
                 </Form.Group>
               </div>
-              <div className="col-md-4">
+            </div>
+            <div className="row">
+              <div className="col-md-6">
+                <Form.Group className="mb-3" controlId="exampleForm.ControlInput20">
+                  <Form.Label>* Address</Form.Label>
+                  <Form.Control
+                    type="text"
+                    title="address"
+                    required
+                    isInvalid={!validAddress}
+                    value={address}
+                    onChange={e => handleAddress(e)}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please provide a valid Address.
+                  </Form.Control.Feedback>
+                </Form.Group>
+              </div>
+              <div className="col-md-6">
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput7">
                   <Form.Label>* Zip Code</Form.Label>
                   <Form.Control
@@ -328,17 +341,17 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
                   aria-label="Default select example 3"
                   className="mb-3"
                 >
-                  <option style={{display: 'none'}}>Choose</option>
-                  <option value="facebook">Facebook</option>
-                  <option value="instagram">Instagram</option>
-                  <option value="brochure">Brochure</option>
-                  <option value="search">Search</option>
-                  <option value="billboard">Billboard</option>
-                  <option value="sticker">Car Sticker</option>
-                  <option value="tv">TV</option>
-                  <option value="radio">Radio</option>
-                  <option value="friend">Friend</option>
-                  <option value="other">Other</option>
+                  <option style={{ display: 'none' }}>Choose</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="Brochure">Brochure</option>
+                  <option value="Search">Search</option>
+                  <option value="Billboard">Billboard</option>
+                  <option value="Sticker">Car Sticker</option>
+                  <option value="TV">TV</option>
+                  <option value="Radio">Radio</option>
+                  <option value="Friend">Friend</option>
+                  <option value="Other">Other</option>
                 </Form.Select>
               </div>
               <div>
@@ -352,7 +365,7 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
                 </Form.Check>
               </div>
             </div>
-            {referredBy && referredBy === 'friend' && (
+            {referredBy && referredBy === 'Friend' && (
               <div className="refereedBy-section">
                 <div className="row">
                   <div className="col-md-4">
@@ -437,7 +450,7 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
                 </div>
               </div>
               <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-4">
                   <Form.Select
                     aria-label="Default select example"
                     className="mb-3"
@@ -445,16 +458,16 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
                     required
                     onChange={event => setRoofType(event.target.value)}
                   >
-                    <option style={{display: 'none'}}>Roof Type</option>
-                    <option value="single">Shingle</option>
-                    <option value="clay">Clay</option>
-                    <option value="tile">Tile</option>
-                    <option value="metal">Metal</option>
-                    <option value="flat">Flat</option>
-                    <option value="other">Other</option>
+                    <option style={{ display: 'none' }}>Roof Type</option>
+                    <option value="Shingle">Shingle</option>
+                    <option value="Clay">Clay</option>
+                    <option value="Tile">Tile</option>
+                    <option value="Metal">Metal</option>
+                    <option value="Flat">Flat</option>
+                    <option value="Other">Other</option>
                   </Form.Select>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-4">
                   <Form.Select
                     required
                     value={roofAge}
@@ -462,11 +475,24 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
                     aria-label="Default select example 2"
                     className="mb-3"
                   >
-                    <option style={{display: 'none'}}>Roof age</option>
+                    <option style={{ display: 'none' }}>Roof age</option>
                     <option value="Under 10 years">&nbsp;0 - 10 years</option>
                     <option value="20-30 years">10 - 20 years</option>
                     <option value="More than 20 years">20 + years</option>
-                    <option value="not-sure">Not Sure</option>
+                    <option value="Not-sure">Not Sure</option>
+                  </Form.Select>
+                </div>
+                <div className="col-md-4">
+                  <Form.Select
+                    required
+                    value={leadType}
+                    onChange={event => setLeadType(event.target.value)}
+                    aria-label="Default select example 3"
+                    className="mb-3"
+                  >
+                    <option style={{ display: 'none' }}>Type of Lead?</option>
+                    <option value="Residential">Residential</option>
+                    <option value="Commercial">Commercial</option>
                   </Form.Select>
                 </div>
               </div>
@@ -490,6 +516,7 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
                     )}
                   </Form.Group>
                 </div>
+
                 <Button type="submit" className="d-flex mx-auto submit-button mt-4 mb-4">
                   Submit
                 </Button>

@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import './contactUsPage.scss';
-import postData from '../../utils/api';
-// import axios from 'axios';
 
 const ContactUsPage = () => {
   const [validated, setValidated] = useState(false);
@@ -12,7 +10,7 @@ const ContactUsPage = () => {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  let formBody = [];
+  const formId = 'yWHYM1qnYU2Etd/3t+moZw==';
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -24,22 +22,18 @@ const ContactUsPage = () => {
     }
     setValidated(true);
     if (form.checkValidity() !== false) {
-      const details = {
-        name: name,
-        email: email,
-        subject: subject,
-        message: message,
-        apiAction: 'addContact',
-      };
-      for (let property in details) {
-        let encodedKey = encodeURIComponent(property);
-        let encodedValue = encodeURIComponent(details[property]);
-        formBody.push(encodedKey + '=' + encodedValue);
-      }
-      formBody = formBody.join('&');
-      postData('https://www.casolargroup.io/hrn.jsp', formBody).then(data => {
-        setValid(true);
-      });
+      const formData = new FormData();
+      formData.append('formId', formId);
+      formData.append('FirstName', name);
+      formData.append('EmailAddress', email);
+      formData.append('Role', subject);
+      formData.append('background', message);
+
+      fetch('https://crm.na1.insightly.com/WebToContact/Create', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors',
+      }).then(res => setValid(true));
     }
   };
 
@@ -50,7 +44,7 @@ const ContactUsPage = () => {
         <div className="row mb-4">
           <div className="col-md-6">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.792716269525!2d-118.25844109999998!3d34.126056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c0e0aca586d3%3A0xd891b670f7b46d5a!2s1620%20S%20Central%20Ave%2C%20Glendale%2C%20CA%2091204!5e0!3m2!1sen!2sus!4v1695759860529!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3299.520542315604!2d-118.4930135!3d34.2097248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c299f8a61002bf%3A0xce26caf103824bc8!2s7647%20Hayvenhurst%20Ave%20Unit%2026%2C%20Van%20Nuys%2C%20CA%2091406!5e0!3m2!1sen!2sus!4v1691166317484!5m2!1sen!2sus"
               width="100%"
               height="300"
               style={{ border: 0 }}
@@ -61,7 +55,7 @@ const ContactUsPage = () => {
               className="mb-4"
             />
             <a
-              href="https://maps.app.goo.gl/61xJFtbTEyRBQuHP9"
+              href="https://www.google.com/maps/search/7647+Hayvenhurst+Ave,+Unit+26,+Van+Nuys,+CA+91406"
               target="_blank"
               rel="noreferrer"
               className="contact-cart mb-3"
@@ -69,7 +63,7 @@ const ContactUsPage = () => {
               <i className="bi bi-geo-alt" />
               <div className="text">
                 <h4>Los Angeles Headquarters</h4>
-                <p>1620 S Central Avenue, Glendale, CA 91204</p>
+                <p>7647 Hayvenhurst Ave, Unit 26, Van Nuys, CA 91406</p>
               </div>
             </a>
             <a href="tel:7472862828" className="contact-cart mb-3">
@@ -93,7 +87,7 @@ const ContactUsPage = () => {
               className="mb-4"
             />
             <a
-              href="https://www.google.com/maps/place/208+S+Grand+Ave,+Santa+Ana,+CA+92701/@33.7439351,-117.8541627,17z/data=!3m1!4b1!4m6!3m5!1s0x80dcd9727d0dde9b:0xbb5f5f842b50c11c!8m2!3d33.7439307!4d-117.8515878!16s%2Fg%2F11j0tb1g7s?entry=ttu"
+              href="https://www.google.com/maps/search/7647+Hayvenhurst+Ave,+Unit+26,+Van+Nuys,+CA+91406"
               target="_blank"
               rel="noreferrer"
               className="contact-cart mb-3"

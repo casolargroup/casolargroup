@@ -6,7 +6,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { E_MAIL, PHONENUMBER } from '../../validation/regex';
-import postData from '../../utils/api';
 
 const PartnerPage = () => {
   const [validated, setValidated] = useState(false);
@@ -20,7 +19,7 @@ const PartnerPage = () => {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  let formBody = [];
+  const formId = 'yWHYM1qnYU2Etd/3t+moZw==';
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -32,24 +31,21 @@ const PartnerPage = () => {
     }
     setValidated(true);
     if (form.checkValidity() !== false) {
-      const details = {
-        name: name,
-        companyName: companyName,
-        phoneNumber: phoneNumber,
-        email: email,
-        subject: subject,
-        message: message,
-        apiAction: 'addPartner',
-      };
-      for (let property in details) {
-        let encodedKey = encodeURIComponent(property);
-        let encodedValue = encodeURIComponent(details[property]);
-        formBody.push(encodedKey + '=' + encodedValue);
-      }
-      formBody = formBody.join('&');
-      postData('https://www.casolargroup.io/hrn.jsp', formBody).then(data => {
-        setValid(true);
-      });
+      const formData = new FormData();
+      formData.append('formId', formId);
+      formData.append('FirstName', name);
+      formData.append('Organization', companyName);
+      formData.append('phones[0].Label', 'Work');
+      formData.append('phones[0].Value', phoneNumber);
+      formData.append('EmailAddress', email);
+      formData.append('Role', subject);
+      formData.append('background', message);
+
+      fetch('https://crm.na1.insightly.com/WebToContact/Create', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors',
+      }).then(res => setValid(true));
     }
   };
 
