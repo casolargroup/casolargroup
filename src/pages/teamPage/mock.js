@@ -4,7 +4,6 @@ import team3 from '../../assets/images/team/3. Danny Thomson.jpg';
 import team4 from '../../assets/images/team/4. Logan Weinberg.jpg';
 import team5 from '../../assets/images/team/5. Inga Saroyan.jpg';
 import team6 from '../../assets/images/team/6. Margarita Ohanyan.jpg';
-import team7 from '../../assets/images/team/7. Hayk Hovhannesyan.jpg';
 import team8 from '../../assets/images/team/8. Lilit Manvelyan.jpg';
 import team9 from '../../assets/images/team/9. Jansen O Yung.jpg';
 import team10 from '../../assets/images/team/10. Stephanie Zolozabel.jpg';
@@ -57,12 +56,6 @@ export const ourTeam = [
     imgUrl: team6,
   },
   {
-    id: 7,
-    name: 'Hayk Hovhannesyan',
-    profession: 'Marketing Manager',
-    imgUrl: team7,
-  },
-  {
     id: 8,
     name: 'Lilit Manvelyan',
     profession: 'Project Manager',
@@ -83,7 +76,7 @@ export const ourTeam = [
   {
     id: 11,
     name: 'Mkrtum Abrahamyan',
-    profession: 'Web Developer',
+    profession: 'Software Developer',
     imgUrl: team11,
   },
   {
