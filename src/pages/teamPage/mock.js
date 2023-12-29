@@ -87,7 +87,7 @@ export const ourTeam = [
   },
   {
     id: 13,
-    name: 'Patrick Hengeller',
+    name: 'Patrick Henggeler',
     profession: 'Sales Representative',
     imgUrl: team13,
   },
