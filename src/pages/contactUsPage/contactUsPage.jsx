@@ -55,7 +55,7 @@ const ContactUsPage = () => {
               className="mb-4"
             />
             <a
-              href="https://www.google.com/maps/search/7647+Hayvenhurst+Ave,+Unit+26,+Van+Nuys,+CA+91406"
+              href="https://maps.app.goo.gl/61xJFtbTEyRBQuHP9"
               target="_blank"
               rel="noreferrer"
               className="contact-cart mb-3"
@@ -63,7 +63,7 @@ const ContactUsPage = () => {
               <i className="bi bi-geo-alt" />
               <div className="text">
                 <h4>Los Angeles Headquarters</h4>
-                <p>7647 Hayvenhurst Ave, Unit 26, Van Nuys, CA 91406</p>
+                <p>1620 S Central Ave, Glendale, CA 91204</p>
               </div>
             </a>
             <a href="tel:7472862828" className="contact-cart mb-3">
