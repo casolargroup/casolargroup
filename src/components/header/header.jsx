@@ -29,14 +29,14 @@ const Header = ({ setMyRef }) => {
     if (expanded) {
       document.querySelector('.myBody').style.overflow = 'hidden';
       document.querySelector('.myBody').addEventListener('click', () => {
-        setExpanded(false)
-      })
+        setExpanded(false);
+      });
       document.querySelector('.myBody').addEventListener('touchstart', () => {
-        setExpanded(false)
-      })
+        setExpanded(false);
+      });
       document.querySelector('.myBody').addEventListener('scroll', () => {
-        setExpanded(false)
-      })
+        setExpanded(false);
+      });
     } else {
       document.querySelector('.myBody').style.overflow = 'auto';
     }
@@ -68,7 +68,7 @@ const Header = ({ setMyRef }) => {
   };
   const scrollToTop = () => {
     navigate('/');
-    setExpanded(false)
+    setExpanded(false);
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
@@ -91,7 +91,7 @@ const Header = ({ setMyRef }) => {
             </div>
           </Navbar.Brand>
           <div className="mobile-phone-call">
-            <a href={'tel:+17472862828'} className="desc">
+            <a href={'tel:+17475005050'} className="desc">
               <LazyLoadImage src={phone} alt="img" />
             </a>
           </div>
@@ -173,8 +173,8 @@ const Header = ({ setMyRef }) => {
                 <NavLink to="/contact-us" onClick={() => setExpanded(false)}>
                   Contact us
                 </NavLink>
-                <a href={'tel:+17472862828'} className="desc">
-                  +1 (747) 286-2828
+                <a href={'tel:+17475005050'} className="desc">
+                  +1 (747) 500-5050
                 </a>
               </div>
             </Nav>

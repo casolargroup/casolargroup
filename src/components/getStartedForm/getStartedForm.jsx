@@ -428,7 +428,7 @@ const GetStartedForm = ({ setValid, isOwner, setIsOwner, calculate, setCalculate
               (including SMS or MMS) (including via prerecorded messages and/or automated technology
               belonging to or hosted by third parties) at the telephone number provided above even
               if it is on a state or Federal Do Not Call List. Message and data rates may apply,
-              Message frequency varies, Text STOP to cancel, text HELP for help at (747) 286-2828.
+              Message frequency varies, Text STOP to cancel, text HELP for help at (747) 500-5050.
               My consent is not a condition of purchase. Please see our{' '}
               <NavLink to="/">Privacy Statement</NavLink> and &nbsp;
               <NavLink to="/">Terms of Use</NavLink>.

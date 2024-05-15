@@ -66,11 +66,11 @@ const ContactUsPage = () => {
                 <p>1620 S Central Ave, Glendale, CA 91204</p>
               </div>
             </a>
-            <a href="tel:7472862828" className="contact-cart mb-3">
+            <a href="tel:7475005050" className="contact-cart mb-3">
               <i className="bi bi-phone" />
               <div className="text">
                 <h4>Phone Number</h4>
-                <p>+1-(747)-286-2828</p>
+                <p>+1-(747)-500-5050</p>
               </div>
             </a>
           </div>

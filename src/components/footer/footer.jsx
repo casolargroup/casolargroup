@@ -28,9 +28,9 @@ const Footer = () => {
                   </a>
                 </p>
                 <p className="contact-info">
-                  <a href="tel:7472862828">
+                  <a href="tel:7475005050">
                     <LazyLoadImage src={phone} alt="img" width={'20px'} height={'auto'} />
-                    <span>+1-(747)-286-2828</span>
+                    <span>+1-(747)-500-5050</span>
                   </a>
                 </p>
                 <p className="contact-info">
@@ -105,7 +105,7 @@ const Footer = () => {
                   </a>
                 </p>
                 <p className="contact-info">
-                  <a href="tel:7472862828">
+                  <a href="tel:8186582362">
                     <LazyLoadImage src={phone} alt="img" width={'20px'} height={'auto'} />
                     <span>+1-(818)-658-2362</span>
                   </a>
