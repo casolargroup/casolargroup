@@ -20,7 +20,7 @@ import BatteryStoragePage from './pages/batteryStoragePage';
 import FinancingPage from './pages/financingPage';
 import PortfolioPage from './pages/portfolioPage';
 import FaqPage from './pages/faqPage';
-import BlogPage from './pages/blogPage';
+// import BlogPage from './pages/blogPage';
 import AccessabilityPage from './pages/accessabilityPage';
 import PartnerPage from './pages/partnerPage';
 
@@ -28,7 +28,7 @@ import MetPixel from './metPixel/metPixel';
 import ScrollToTop from './utils/scrollToTop';
 import CareersPage from './pages/careersPage';
 import PrivacyPolicyPage from './pages/privacyPolicyPage';
-import FbChat from './utils/fbChat';
+// import FbChat from './utils/fbChat';
 import ReactGA from 'react-ga';
 import { useLocation } from 'react-router-dom';
 import ErrorPage from './pages/errorPage';
@@ -54,7 +54,7 @@ function App() {
     <div className="App">
       <ScrollToTop />
       <MetPixel />
-      <FbChat />
+      {/*<FbChat />*/}
       <Header setMyRef={setMyRef} />
       <div className="myBody">
         <Routes>
@@ -71,7 +71,7 @@ function App() {
           <Route path={'/become-partner'} element={<PartnerPage />} />
           <Route path={'/get-started'} element={<GetStartedPage />} />
           <Route path={'/faq'} element={<FaqPage />} />
-          <Route path={'/blog'} element={<BlogPage />} />
+          {/*<Route path={'/blog'} element={<BlogPage />} />*/}
           <Route path={'/careers'} element={<CareersPage />} />
           <Route path={'/privacy-policy'} element={<PrivacyPolicyPage />} />
         </Routes>
